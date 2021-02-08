@@ -15,6 +15,7 @@ public class Recipe {
     private Integer serving;
     private String source;
     private String url;
+    @Lob
     private String direction;
     @Enumerated(value = EnumType.STRING)
     private Difficulty difficulty;
