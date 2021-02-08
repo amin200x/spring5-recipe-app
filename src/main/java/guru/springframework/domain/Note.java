@@ -9,7 +9,7 @@ public class Note {
     private Long id;
     @OneToOne
     private Recipe recipe;
-    @Lob
+    @Lob // For above 250 char and array of bytes like images
     private String recipeNotes;
 
     public Long getId() {

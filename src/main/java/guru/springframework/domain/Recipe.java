@@ -1,6 +1,8 @@
 package guru.springframework.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Recipe {
@@ -22,6 +24,8 @@ public class Recipe {
     @OneToOne(cascade = CascadeType.ALL)
     private Note note;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    private Set<Ingredient> ingredients = new HashSet<>();
 
     public void setId(Long id) {
         this.id = id;
@@ -30,6 +34,7 @@ public class Recipe {
     public Long getId() {
         return id;
     }
+
     public String getDescription() {
         return description;
     }
@@ -102,4 +107,11 @@ public class Recipe {
         this.note = note;
     }
 
+    public Set<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(Set<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
 }
