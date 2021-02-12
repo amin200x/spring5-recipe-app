@@ -29,7 +29,7 @@ public class Recipe {
     private Set<Ingredient> ingredients = new HashSet<>();
 
     @ManyToMany
-    @JoinTable(name = "recipe_category", joinColumns = @JoinColumn(name="recipe_id"),
+    @JoinTable(name = "recipe_category", joinColumns = @JoinColumn(name = "recipe_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
     private Set<Category> categories = new HashSet<>();
 
@@ -111,10 +111,17 @@ public class Recipe {
 
     public void setNote(Note note) {
         this.note = note;
+        note.setRecipe(this);
     }
 
     public Set<Ingredient> getIngredients() {
         return ingredients;
+    }
+
+    public Recipe addIngredient(Ingredient ingredient) {
+        ingredient.setRecipe(this);
+        this.ingredients.add(ingredient);
+        return this;
     }
 
     public void setIngredients(Set<Ingredient> ingredients) {
