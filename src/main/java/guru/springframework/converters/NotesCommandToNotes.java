@@ -1,6 +1,5 @@
 package guru.springframework.converters;
 
-import com.sun.tools.javac.resources.CompilerProperties;
 import guru.springframework.commands.NotesCommand;
 import guru.springframework.domain.Note;
 import lombok.Synchronized;

@@ -4,8 +4,6 @@ import guru.springframework.commands.CategoryCommand;
 import guru.springframework.domain.Category;
 import lombok.Synchronized;
 import org.springframework.stereotype.Component;
-import org.springframework.core.*;
-import java.util.Set;
 
 
 @Component
