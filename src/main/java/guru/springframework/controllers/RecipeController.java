@@ -1,7 +1,6 @@
 package guru.springframework.controllers;
 
 import guru.springframework.commands.RecipeCommand;
-import guru.springframework.converters.RecipeToRecipeCommand;
 import guru.springframework.services.RecipeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,8 +46,8 @@ public class RecipeController {
     }
     @RequestMapping("/recipe/{id}/delete")
     public String update(@PathVariable("id") String id){
-            recipeService.delete(Long.valueOf(id));
-        return "redirect:../../index";
+            recipeService.deleteById(Long.valueOf(id));
+        return "redirect:/";
 
     }
 }
