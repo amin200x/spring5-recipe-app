@@ -24,6 +24,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h1 class="panel-title" th:text="${recipe.description}">Recipe Description Here!</h1>
+                        <a class="btn btn-default" th:href="@{'/recipe/'+${recipe.id}+'/image'}" role="button">Change Image</a>
                     </div>
                     <div class="panel-body">
                         <div class="row">
@@ -35,6 +36,7 @@
                                     <li th:each="category : ${recipe.categories}" th:text="${category.description}">cat one</li>
 
                                 </ul>
+                                <img with="150px" height="150px" src="../../static/images/soup.jpg" th:src="@{'/recipe/'+${recipe.id} + '/recipeimage'}"/>
                             </div>
                         </div>
                         <div class="row">
